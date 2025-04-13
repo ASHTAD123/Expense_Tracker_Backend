@@ -11,7 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
         		.allowedOrigins("https://symphonious-otter-07cb0e.netlify.app") 
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
+        		.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowCredentials(true)
                 .allowedHeaders("Authorization", "Content-Type")
          		.exposedHeaders("Set-Cookie");     
