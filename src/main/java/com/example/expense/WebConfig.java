@@ -30,6 +30,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
@@ -37,9 +38,7 @@ public class WebConfig implements WebMvcConfigurer {
                 "https://symphonious-otter-07cb0e.netlify.app",
                 "https://dev--symphonious-otter-07cb0e.netlify.app"
             )
-            .allowedMethods("*")
-            .allowedHeaders("*")
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
             .allowCredentials(true);
     }
 }
-
